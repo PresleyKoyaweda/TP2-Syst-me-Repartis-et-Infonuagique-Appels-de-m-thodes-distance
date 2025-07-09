@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "ex.grpc";
+package operation;
+
+//TODO : Defines the service, the request and Reply
+message OperationRequest {
+  string task = 1; // Each field declaration ends with a semicolon.
+}
+
+message OperationReply {
+  string message = 1; // Same here.
+}
+
+service Operation {
+  // Defines an RPC method within the service.
+  rpc ProcessOperation(OperationRequest) returns (OperationReply);
+}
